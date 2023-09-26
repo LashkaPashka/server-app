@@ -18,7 +18,7 @@ router = APIRouter(
 @router.post('/')
 async def import_file_json():
     def get_json(model: str):
-        with open(f'app/static/json/{model}.json', encoding='utf-8') as file:
+        with open(f'booking/app/static/json/{model}.json', encoding='utf-8') as file:
             return json.load(file)
 
     bookings = get_json('Bookings')
