@@ -1,5 +1,6 @@
 import time
 
+from app.importer.router import router as router_importer
 import sentry_sdk
 from fastapi import FastAPI, Depends
 from typing import Optional
@@ -33,6 +34,9 @@ app.include_router(router_hotels)
 app.include_router(router_templates)
 app.include_router(router_images)
 app.include_router(router_check)
+app.include_router(router_importer)
+
+
 
 app = VersionedFastAPI(app,
     version_format='{major}',
